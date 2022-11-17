@@ -3,7 +3,7 @@ import java.util.Objects;
 public class Person {
     protected final String name;
     protected final String surname;
-    protected  int age;
+    protected int age;
     protected String address;
 
     public Person(String name, String surname, int age, String address) {
@@ -24,8 +24,8 @@ public class Person {
     public int getAge() {
         if (age == 0) {
             try {
-                throw new IllegalArgumentException("Error-27!");
-            } catch (IllegalArgumentException e){
+                throw new IllegalArgumentException("age don't = 0!");
+            } catch (IllegalArgumentException e) {
                 e.printStackTrace();
             }
         }
@@ -33,39 +33,40 @@ public class Person {
     }
 
     public String getAddress() {
-        if(address==null){
-            try {
-                throw new IllegalArgumentException("Error-38!");
-            }catch (IllegalArgumentException e){
-                e.printStackTrace();
-            }
+        if (address == null) {
+            throw new NullPointerException("address=null!");
         }
         return address;
     }
 
     public void setAddress(String address) {
-            this.address = address;
+        this.address = address;
     }
 
-    private boolean hasAge (){
-        if(age <= 0) {
+    private boolean hasAge() {
+        if (age <= 0) {
             return false;
-        }else {
+        } else {
             return true;
         }
     }
 
-    private boolean hasAddress(){
-        if(address != null) {
+    private boolean hasAddress() {
+        if (address != null) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
     public void happyBirthday() {
-        if (hasAge()){
-           age++;
+        if (hasAge()) {
+            try {
+                throw new IllegalArgumentException("age don't = 0!");
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            }
+            age++;
         }
     }
 

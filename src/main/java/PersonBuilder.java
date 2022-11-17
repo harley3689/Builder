@@ -26,6 +26,9 @@ public class PersonBuilder {
     }
 
     public Person build() {
+        if (name == null || surname == null) {
+            throw new IllegalStateException("name or surname missing!");
+        }
         return new Person(name, surname, age, address);
     }
 }
