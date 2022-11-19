@@ -27,7 +27,8 @@ public class Main {
                     .setSurname("Пупкин")
                     .setAge(-100)
                     .build();
-        } catch (java.lang.IllegalArgumentException e) {
+            throw new IllegalArgumentException ("Uncorrected data");
+        } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
 
