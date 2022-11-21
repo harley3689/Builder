@@ -16,19 +16,28 @@ public class PersonBuilder {
     }
 
     public PersonBuilder setAge(int age) {
-        this.age = age;
-        return this;
+        if (age<0){
+            throw new IllegalArgumentException("age don't = 0!");
+        }else {
+            this.age = age;
+            return this;
+        }
     }
 
     public PersonBuilder setAddress(String address) {
-        this.address = address;
-        return this;
+        if (address == null) {
+            throw new IllegalStateException("address=null!");
+        }else {
+            this.address = address;
+            return this;
+        }
     }
 
     public Person build() {
         if (name == null || surname == null) {
             throw new IllegalStateException("name or surname missing!");
+        }else {
+            return new Person(name, surname, age, address);
         }
-        return new Person(name, surname, age, address);
     }
 }
