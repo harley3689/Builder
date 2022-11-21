@@ -27,7 +27,6 @@ public class Main {
                     .setSurname("Пупкин")
                     .setAge(-100)
                     .build();
-            throw new IllegalArgumentException ("Uncorrected data");
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
@@ -35,7 +34,10 @@ public class Main {
         son.happyBirthday();
         son.setAddress("Мельбурн");
 
-        System.out.println(mom+"\n"+son);
+        System.out.println(mom + "\n" + son);
+
+        new PersonBuilder()
+                .build();
     }
 }
 
